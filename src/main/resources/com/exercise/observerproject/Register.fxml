@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.exercise.observerproject.RegisterController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="notificationMessage"/>
+
+    <Label text="Home page" alignment="CENTER">
+        <font>
+            <Font name="Verdana" size="24.0"/>
+        </font>
+    </Label>
+
+    <Label fx:id="messageValue" text="Enter your data" >
+        <font>
+            <Font name="Verdana" size="14.0"/>
+        </font>
+    </Label>
+
+    <TextField fx:id="name" prefWidth="300.0" promptText="Your name"/>
+    <TextField fx:id="email" prefWidth="300.0" promptText="Your email"/>
+
+    <GridPane alignment="CENTER" vgap="10.0" hgap="10.0">
+
+        <Button text="Register" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#registerButton"/>
+        <Button text="Login instead" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#toLoginPageButton"/>
+
+    </GridPane>
+
+</VBox>
