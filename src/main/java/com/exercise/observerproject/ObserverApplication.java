@@ -1,5 +1,7 @@
 package com.exercise.observerproject;
 
+import entity.User;
+import entity.ViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,6 +21,7 @@ public class ObserverApplication extends Application {
     }
 
     public static void main(String[] args) {
+        ViewController.users.add(new User("a", "a", "a"));
         launch();
     }
 }

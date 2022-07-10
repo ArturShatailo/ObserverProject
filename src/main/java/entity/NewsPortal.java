@@ -10,6 +10,10 @@ public class NewsPortal implements Portal {
     private ArrayList<Resource> news = new ArrayList<>();
     private Set<Follower> followers = new HashSet<>();
 
+    public Set<Follower> getFollowers() {
+        return followers;
+    }
+
     @Override
     public void addSubscriber(Follower f) {
         followers.add(f);

@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.PasswordField?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.exercise.observerproject.RegisterController">
+      fx:controller="com.exercise.observerproject.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label text="Registration" alignment="CENTER">
+    <Label text="Login" alignment="CENTER">
         <font>
             <Font name="Verdana" size="24.0"/>
         </font>
@@ -27,14 +27,13 @@
         </font>
     </Label>
 
-    <TextField fx:id="name" prefWidth="300.0" promptText="Your name"/>
     <TextField fx:id="email" prefWidth="300.0" promptText="Your email"/>
     <PasswordField fx:id="password" prefWidth="300.0" promptText="Your password"/>
 
     <GridPane alignment="CENTER" vgap="10.0" hgap="10.0">
 
-        <Button text="Register" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#registerButton"/>
-        <Button text="Login instead" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#toLoginPageButton"/>
+        <Button text="Login" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#loginButton"/>
+        <Button text="Register instead" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#toRegisterPageButton"/>
 
     </GridPane>
 

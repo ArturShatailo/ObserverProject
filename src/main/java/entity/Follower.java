@@ -10,6 +10,6 @@ public interface Follower {
 
     void addToDashboard(Resource r);
 
-    void showDashboard();
+    //void showDashboard();
 
 }

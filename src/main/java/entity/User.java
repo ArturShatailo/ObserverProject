@@ -1,7 +1,6 @@
 package entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class User implements Follower {
 
@@ -9,11 +8,36 @@ public class User implements Follower {
 
     private final String email;
 
-    private final List<Resource> dashboard = new ArrayList<>();
+    private final String password;
 
-    public User(String name, String email) {
+    private final LinkedList<Resource> dashboard = new LinkedList<>();
+
+    public LinkedList<Resource> getDashboard() {
+        return dashboard;
+    }
+
+    private final Set<Portal> portals = new HashSet<>();
+
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
+        this.password = password;
+    }
+
+    public Set<Portal> getPortals() {
+        return portals;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -23,21 +47,18 @@ public class User implements Follower {
 
     @Override
     public void addToDashboard(Resource content) {
-        dashboard.add(content);
-    }
-
-    @Override
-    public void showDashboard() {
-        dashboard.forEach(System.out::println);
+        dashboard.addFirst(content);
     }
 
     @Override
     public void subscribeRequest(Portal portal) {
+        portals.add(portal);
         portal.addSubscriber(this);
     }
 
     @Override
     public void unsubscribeRequest(Portal portal) {
+        portals.remove(portal);
         portal.removeSubscriber(this);
     }
 }

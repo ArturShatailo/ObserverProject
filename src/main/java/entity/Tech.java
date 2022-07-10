@@ -1,7 +1,5 @@
 package entity;
 
-import com.exercise.observerproject.ChannelsController;
-import com.exercise.observerproject.ObserverController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -35,40 +33,6 @@ public class Tech {
     public static double roundMet(double a){
         double b = Math.pow(10, 2);
         return Math.ceil(a * b) / b;
-    }
-
-    public static void newWindow(URL application, String title, User user, Stage stage, int x, int y){
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(application);
-            Scene scene = new Scene(fxmlLoader.load(), x, y);
-            stage.setTitle(title);
-            stage.setScene(scene);
-
-            ChannelsController channelsController = fxmlLoader.getController();
-            channelsController.setCurrentUser(user);
-
-            stage.show();
-        }
-        catch (Exception exception){
-            exception.printStackTrace();
-        }
-    }
-
-    public static void newWindowA(URL application, String title, User user, Stage stage, int x, int y){
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(application);
-            Scene scene = new Scene(fxmlLoader.load(), x, y);
-            stage.setTitle(title);
-            stage.setScene(scene);
-
-            ObserverController observerController = fxmlLoader.getController();
-            observerController.setCurrentUser(user);
-
-            stage.show();
-        }
-        catch (Exception exception){
-            exception.printStackTrace();
-        }
     }
 
     public static void newWindow(URL application, String title, Stage stage, int x, int y){

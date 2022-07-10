@@ -12,12 +12,19 @@ public class News implements Resource {
     private String text;
     private ArrayList<Tag> tags;
 
+    private final Notification notification;
+
     public News(String author, String title, String text, ArrayList<Tag> tags) {
         this.author = author;
         this.date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         this.title = title;
         this.text = text;
         this.tags = tags;
+        this.notification = new Notification(title);
+    }
+
+    public Notification getNotification(){
+        return notification;
     }
 
     @Override
