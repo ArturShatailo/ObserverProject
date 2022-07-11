@@ -13,15 +13,22 @@ import java.util.Map;
 
 public class PortalsController extends ViewController {
 
-
     public TextField director;
+
     public TextField date;
+
     public TextField name;
+
     public TextArea overview;
+
     public TextArea newsTags;
+
     public TextArea filmTags;
+
     public TextField author;
+
     public TextField title;
+
     public TextArea newsText;
 
     public void onPostNews() {

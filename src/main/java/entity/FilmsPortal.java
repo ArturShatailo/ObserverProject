@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class FilmsPortal implements Portal {
 
-    private ArrayList<Resource> films = new ArrayList<>();
-    private Set<Follower> followers = new HashSet<>();
+    private final ArrayList<Resource> films = new ArrayList<>();
+    private final Set<Follower> followers = new HashSet<>();
 
     @Override
     public void addSubscriber(Follower f) {

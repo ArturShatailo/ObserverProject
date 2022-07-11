@@ -28,8 +28,11 @@ public class ObserverController extends ViewController {
 
     @FXML
     public void initialize(){
-
         updateDashboardButton();
+        scrollEvent();
+    }
+
+    private void scrollEvent() {
         dashboardScroll.vvalueProperty().addListener((observableValue, oldValue, newValue) -> {
             if(newValue.intValue() == 1 && scrollCounter == 0){
                 showReviewed();
@@ -46,8 +49,6 @@ public class ObserverController extends ViewController {
 
     @FXML
     protected void updateDashboardButton() {
-
-        //Main.main(new String[10]);
 
         scrollCounter = 0;
         resourcesNew = new LinkedList<>(currentUser.getDashboard());
@@ -95,7 +96,7 @@ public class ObserverController extends ViewController {
 
     @FXML
     public void back(ActionEvent actionEvent) {
-        Tech.nextWindow(getClass().getResource("Register.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
+        Tech.nextWindow(getClass().getResource("Home.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
     }
 
     private Label createMessageLine() {
