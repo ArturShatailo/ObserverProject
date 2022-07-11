@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main implements Statics{
+public class Main extends Thread implements Statics{
 
     public static void main(String[] args) {
+
+        Main thread = new Main();
+        thread.start();
+
+    }
+
+    public void start() {
 
         Map<String, String> content = new HashMap<>();
 
@@ -34,8 +41,8 @@ public class Main implements Statics{
         content2.put("text", Tech.GetInputStringFunction());
         System.out.print("Input news tags (one by one, divide with Enter). Double Enter is exit ");
         newsPortal.addContent(content2, inputValues());
-    }
 
+    }
 
     private static ArrayList<Tag> inputValues() {
 

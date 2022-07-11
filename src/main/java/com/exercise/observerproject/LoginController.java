@@ -32,6 +32,7 @@ public class LoginController extends ViewController implements Statics {
         else{
             currentUser = user;
             nextWindow(getCurrentStage(actionEvent), "Home.fxml", "Home Page");
+            newWindow("Portals.fxml", "Portals");
         }
 
     }
@@ -41,13 +42,18 @@ public class LoginController extends ViewController implements Statics {
         Node node = (Node) actionEvent.getSource();
         Stage currentStage = (Stage) node.getScene().getWindow();
 
-        Tech.newWindow(getClass().getResource("Register.fxml"), "Register", currentStage, 500, 600);
+        Tech.nextWindow(getClass().getResource("Register.fxml"), "Register", currentStage, 500, 600);
 
     }
 
     @Override
     protected void nextWindow(Stage stage, String source, String title) {
-        Tech.newWindow(getClass().getResource(source), title, stage, 500, 600);
+        Tech.nextWindow(getClass().getResource(source), title, stage, 500, 600);
+    }
+
+    @Override
+    protected void newWindow(String source, String title) {
+        Tech.newWindow(getClass().getResource(source), title, 500, 600);
     }
 
     @Override

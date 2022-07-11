@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.exercise.observerproject.PortalsController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox alignment="CENTER" spacing="20.0">
+
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Label text="Portals" alignment="CENTER">
+            <font>
+                <Font name="Verdana" size="24.0"/>
+            </font>
+        </Label>
+        <GridPane alignment="CENTER" vgap="10.0" hgap="10.0">
+            <Label text="Input information about news" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font name="Verdana" size="16.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="author" prefWidth="200.0" promptText="Author name" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="title" prefWidth="200.0" promptText="Title" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextArea fx:id="newsText" prefWidth="200.0" prefHeight="100" promptText="News text" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextArea fx:id="newsTags" prefWidth="200.0" prefHeight="100" promptText="Input theme tags (divide with coma)" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Button text="Post News" onAction="#onPostNews" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <GridPane alignment="CENTER" vgap="10.0" hgap="10.0">
+            <Label text="Input information about film" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font name="Verdana" size="16.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="director" prefWidth="200.0" promptText="Director name" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="date" prefWidth="200.0" promptText="Release date" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="name" prefWidth="200.0" promptText="Input name" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextArea fx:id="overview" prefWidth="200.0" prefHeight="100" promptText="Input short overview" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextArea fx:id="filmTags" prefWidth="200.0" prefHeight="100" promptText="Input genre tags (divide with coma)" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <Button text="Post Film" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#onPostFilm"/>
+        </GridPane>
+    </VBox>
+
+
+</AnchorPane>

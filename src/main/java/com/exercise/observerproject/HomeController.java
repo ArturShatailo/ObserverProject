@@ -48,11 +48,11 @@ public class HomeController extends ViewController {
 
     @FXML
     public void back(ActionEvent actionEvent) {
-        Tech.newWindow(getClass().getResource("Register.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
+        Tech.nextWindow(getClass().getResource("Register.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
     }
     @FXML
     public void onDashboard(ActionEvent actionEvent) {
-        Tech.newWindow(getClass().getResource("Dashboard.fxml"), "Dashboard", getCurrentStage(actionEvent), 500, 600);
+        Tech.nextWindow(getClass().getResource("Dashboard.fxml"), "Dashboard", getCurrentStage(actionEvent), 500, 600);
     }
 
 

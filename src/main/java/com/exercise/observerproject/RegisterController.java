@@ -51,7 +51,7 @@ public class RegisterController extends ViewController {
 
     @Override
     protected void nextWindow(Stage stage, String source, String title) {
-        Tech.newWindow(getClass().getResource(source), title, stage, 500, 600);
+        Tech.nextWindow(getClass().getResource(source), title, stage, 500, 600);
     }
 
 }

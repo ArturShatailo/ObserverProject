@@ -35,7 +35,7 @@ public class Tech {
         return Math.ceil(a * b) / b;
     }
 
-    public static void newWindow(URL application, String title, Stage stage, int x, int y){
+    public static void nextWindow(URL application, String title, Stage stage, int x, int y){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(application);
             Scene scene = new Scene(fxmlLoader.load(), x, y);

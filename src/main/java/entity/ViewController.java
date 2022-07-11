@@ -16,6 +16,7 @@ abstract public class ViewController implements Statics{
     }
 
     protected void nextWindow(Stage stage, String s, String t){}
+    protected void newWindow(String s, String t){}
 
     protected User checkEmailDataBase(String email) {
         return users.stream().filter(u -> u.getEmail().equals(email)).findAny().orElse(null);

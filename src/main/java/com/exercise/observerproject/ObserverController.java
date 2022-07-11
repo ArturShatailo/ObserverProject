@@ -3,47 +3,73 @@ package com.exercise.observerproject;
 import entity.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ObserverController extends ViewController {
     @FXML
     public Label notificationMessage;
+
+    public ScrollPane dashboardScroll;
+
     public GridPane dashboardArea;
-    private static ArrayList<Resource> resources = new ArrayList<>();
+
+    private static List<Resource> resources;
+
+    private static List<Resource> resourcesNew;
+
+    int scrollCounter = 0;
 
     @FXML
     public void initialize(){
 
         updateDashboardButton();
+        dashboardScroll.vvalueProperty().addListener((observableValue, oldValue, newValue) -> {
+            if(newValue.intValue() == 1 && scrollCounter == 0){
+                showReviewed();
+                scrollCounter = 1;
+            }
+        });
+    }
 
+    private void showReviewed() {
+        resources.removeAll(resourcesNew);
+        reloadDashboard(new ArrayList<>(resources));
+        resources = new LinkedList<>(currentUser.getDashboard());
+    }
+
+    @FXML
+    protected void updateDashboardButton() {
+
+        //Main.main(new String[10]);
+
+        scrollCounter = 0;
+        resourcesNew = new LinkedList<>(currentUser.getDashboard());
+
+        excludeReviewed();
+
+        resources = new LinkedList<>(currentUser.getDashboard());
+        dashboardArea.getChildren().clear();
+        reloadDashboard(new ArrayList<>(resourcesNew));
+
+    }
+
+    private void excludeReviewed() {
+        if(resources != null && resourcesNew.size() - resources.size() > 1 )
+            resourcesNew.removeAll(resources);
     }
 
     private void reloadDashboard(ArrayList<Resource> r) {
         for (Resource resource : r) {
             dashboardArea.add(addRecord(resource), 0, dashboardArea.getRowCount()+1);
         }
-    }
-
-    @FXML
-    protected void updateDashboardButton() {
-
-        Main.main(new String[10]);
-//        resources = new ArrayList<>(currentUser.getDashboard());
-//        reloadDashboard(resources);
-
-        ArrayList<Resource> newResources = new ArrayList<>(currentUser.getDashboard());
-        newResources.removeAll(resources);
-        resources = new ArrayList<>(currentUser.getDashboard());
-        reloadDashboard(newResources);
+        dashboardArea.add(createMessageLine(), 0, dashboardArea.getRowCount()+1);
     }
 
     private GridPane addRecord(Resource resource){
@@ -69,6 +95,12 @@ public class ObserverController extends ViewController {
 
     @FXML
     public void back(ActionEvent actionEvent) {
-        Tech.newWindow(getClass().getResource("Register.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
+        Tech.nextWindow(getClass().getResource("Register.fxml"), "Home", getCurrentStage(actionEvent), 500, 600);
+    }
+
+    private Label createMessageLine() {
+        Label l = new Label();
+        l.setText("There are no unreviewed notifications");
+        return l;
     }
 }
