@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Film implements Resource {
 
-    private String director;
-    private String date;
-    private String name;
-    private String overview;
-    private ArrayList<Tag> genre;
+    private final String director;
+    private final String date;
+    private final String name;
+    private final String overview;
+    private final ArrayList<Tag> genre;
 
     private final Notification notification;
 
