@@ -18,7 +18,7 @@ public class HomeController extends ViewController {
     public Button onBackClick;
 
     /*
-    * Initialization of Home page view and checkPortal() methods calling. First one with 'newsPortal' static variable
+    * Initialization of Home page view and checkPortal() methods calling. First one with 'newsPortal' static variable,
     * implemented from Statics interface through ViewController abstract class extending. The second one with 'firstPortal'
     * with the same implementation way.
     */
@@ -29,6 +29,8 @@ public class HomeController extends ViewController {
     }
 
     /*
+     * The methods chain checkPortal -> follow -> unfollow realizes subscribe/unsubscribe button toggling
+     *
      * Checks if 'currentUser' field has @param 'portal' in 'portals' field.
      * - If yes @param button receives method unfollow() as onAction attribute. unfollow() method receives
      * parameters 'portal' and 'button' as parameters;

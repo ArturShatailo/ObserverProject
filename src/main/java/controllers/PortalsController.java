@@ -29,6 +29,15 @@ public class PortalsController extends ViewController {
     @FXML
     public TextArea newsText;
 
+    /*
+    * Creates HashMap collection that will be a pattern for further Resource <News> object creating.
+    *
+    * Creates new HashMap collection 'content'.
+    * Values of fields 'author', 'title', 'text' are sent to 'content' as elements with keys "author", "title", "text";
+    * Calls method addContent() of 'newsPortal' field implemented from Statics through ViewController abstract class.
+    * addContent() receives 'content' collection and result of inputValues() method as parameters.
+    * inputValues() receives 'newsTags' field value as a parameter.
+    */
     @FXML
     public void onPostNews() {
 
@@ -40,6 +49,16 @@ public class PortalsController extends ViewController {
         newsPortal.addContent(content, inputValues(newsTags.getText()));
 
     }
+
+    /*
+     * Creates HashMap collection that will be a pattern for further Resource <Film> object creating.
+     *
+     * Creates new HashMap collection 'content'.
+     * Values of fields 'director', 'date', 'name', 'overview' are sent to 'content' as elements with keys "director", "date", "name", "overview";
+     * Calls method addContent() of 'filmsPortal' field implemented from Statics through ViewController abstract class.
+     * addContent() receives 'content' collection and result of inputValues() method as parameters.
+     * inputValues() receives 'filmTags' field value as a parameter.
+     */
     @FXML
     public void onPostFilm() {
 
@@ -53,6 +72,11 @@ public class PortalsController extends ViewController {
 
     }
 
+
+    /*
+    * Clears from spaces received String parameter 'values', and splits it into the array dividing after coma;
+    * Received String array cast into ArrayList and returns it.
+    */
     private static ArrayList<Tag> inputValues(String values) {
 
         String[] s = values.replaceAll(" ", "").split(",");

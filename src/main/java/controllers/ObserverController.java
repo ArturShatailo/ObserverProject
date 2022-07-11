@@ -35,6 +35,8 @@ public class ObserverController extends ViewController {
     }
 
     /*
+     * Realizes displaying old reviewed Resource objects in Dashboard only after full scrolling down.
+     *
      * Scroll event handler for 'dashboardScroll' field. If scroll position is full bottom, that is 1 in numeric equivalent
      * AND if 'scrollCounter' field is 0, calls method showReviewed() and sets 'scrollCounter' field as 1 value;
      */
@@ -48,7 +50,7 @@ public class ObserverController extends ViewController {
     }
 
     /*
-     * Shows all old, that is reviewed or showed objects from 'resources' field. If this method is called for the first time
+     * Shows all old, that is reviewed or showed, objects from 'resources' field. If this method is called for the first time
      * 'resources' field will be empty, but in case of further calls, the 'resources' field will contain elements from
      * 'dashboard' field of object in 'currentUser' field but excluding elements from 'resourcesNew' field.
      * To show elements the method reloadDashboard() is called with 'resources' field as a parameter.
@@ -60,7 +62,7 @@ public class ObserverController extends ViewController {
     }
 
     /*
-     * Clears all objects shown on dashboard and uploads new ones that is the latest added to 'dashboard'
+     * Clears all objects shown on dashboard and uploads new ones that are the latest added to 'dashboard'
      * field of object in 'currentUser' field.
      *
      * update button click handler method. er
