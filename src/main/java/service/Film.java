@@ -10,6 +10,10 @@ public class Film implements Resource {
     private final String overview;
     private final ArrayList<Tag> genre;
 
+    /*
+    Object of Notification class that is coded in Resource interface and helps to show objects in dashboard with
+    the standard pattern and current time of adding for instances of different classes.
+     */
     private final Notification notification;
 
     public Film(String director, String name, String date, String overview, ArrayList<Tag> genre) {

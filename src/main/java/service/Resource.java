@@ -7,7 +7,9 @@ public interface Resource {
 
     Notification getNotification();
 
+    //Class that helps to create objects and paste them into dashboard with the standard pattern and current time of adding.
     class Notification{
+
         public String title;
         public String date;
 

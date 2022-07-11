@@ -12,6 +12,10 @@ public class News implements Resource {
     private final String text;
     private final ArrayList<Tag> tags;
 
+    /*
+    Object of Notification class that is coded in Resource interface and helps to show objects in dashboard with
+    the standard pattern and current time of adding for instances of different classes.
+     */
     private final Notification notification;
 
     public News(String author, String title, String text, ArrayList<Tag> tags) {

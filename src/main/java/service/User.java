@@ -39,22 +39,28 @@ public class User implements Follower {
         return name;
     }
 
+    //Shows notification in console about receiving it from Portal subscribed to.
     @Override
     public void update(Resource content) {
         System.out.println(name + "(" + email + ")" + " got "+"\n"+content+"\n\n");
     }
 
+    //Adds new Resource object @param 'content' into 'dashboard' collection
     @Override
     public void addToDashboard(Resource content) {
         dashboard.addFirst(content);
     }
 
+    //Adds new Portal object @param 'portal' into 'portals' collection and adds this User object into 'followers'
+    //collection field of @param 'portal' by method addSubscriber().
     @Override
     public void subscribeRequest(Portal portal) {
         portals.add(portal);
         portal.addSubscriber(this);
     }
 
+    //Removes Portal object @param 'portal' from 'portals' collection and removes this User object from 'followers'
+    //collection field of @param 'portal' by method removeSubscriber().
     @Override
     public void unsubscribeRequest(Portal portal) {
         portals.remove(portal);
