@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 public interface Follower {
 
@@ -9,7 +9,5 @@ public interface Follower {
     void unsubscribeRequest(Portal p);
 
     void addToDashboard(Resource r);
-
-    //void showDashboard();
 
 }

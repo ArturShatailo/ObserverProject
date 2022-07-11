@@ -1,9 +1,7 @@
-package com.exercise.observerproject;
+package controllers;
 
-import entity.Tag;
-import entity.Tech;
-import entity.ViewController;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import service.Tag;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -12,25 +10,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PortalsController extends ViewController {
-
+    @FXML
     public TextField director;
-
+    @FXML
     public TextField date;
-
+    @FXML
     public TextField name;
-
+    @FXML
     public TextArea overview;
-
+    @FXML
     public TextArea newsTags;
-
+    @FXML
     public TextArea filmTags;
-
+    @FXML
     public TextField author;
-
+    @FXML
     public TextField title;
-
+    @FXML
     public TextArea newsText;
 
+    @FXML
     public void onPostNews() {
 
         Map<String, String> content = new HashMap<>();
@@ -41,7 +40,7 @@ public class PortalsController extends ViewController {
         newsPortal.addContent(content, inputValues(newsTags.getText()));
 
     }
-
+    @FXML
     public void onPostFilm() {
 
         Map<String, String> content = new HashMap<>();

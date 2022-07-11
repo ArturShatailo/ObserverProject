@@ -1,7 +1,6 @@
-package entity;
+package service;
 
 import java.util.*;
-
 public class User implements Follower {
 
     private final String name;

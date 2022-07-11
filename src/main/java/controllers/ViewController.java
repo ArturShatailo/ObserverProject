@@ -1,14 +1,16 @@
-package entity;
+package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import service.Statics;
+import service.User;
 
-abstract public class ViewController implements Statics{
+abstract public class ViewController implements Statics {
 
     protected static User currentUser;
 
-    protected void errorMessageShow(){}
+    protected void errorMessageShow(String m){}
 
     protected Stage getCurrentStage(ActionEvent a){
         Node node = (Node) a.getSource();
@@ -16,7 +18,6 @@ abstract public class ViewController implements Statics{
     }
 
     protected void nextWindow(Stage stage, String s, String t){}
-    protected void newWindow(String s, String t){}
 
     protected User checkEmailDataBase(String email) {
         return users.stream().filter(u -> u.getEmail().equals(email)).findAny().orElse(null);

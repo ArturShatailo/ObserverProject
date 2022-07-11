@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 public class Tag {
 
@@ -10,7 +10,7 @@ public class Tag {
 
     @Override
     public String toString() {
-        return "link: "+link;
+        return "link: " + link;
     }
 
 }

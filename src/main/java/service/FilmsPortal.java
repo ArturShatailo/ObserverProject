@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -31,7 +31,7 @@ public class FilmsPortal implements Portal {
         films.add(resource);
         sendNotification(resource);
         addDashboard(resource);
-    };
+    }
 
     @Override
     public void sendNotification(Resource resource) {

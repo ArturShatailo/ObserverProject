@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
+
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.exercise.observerproject.HomeController"
+            fx:controller="controllers.HomeController"
             prefHeight="600.0" prefWidth="500.0">
 
     <VBox alignment="CENTER" spacing="20.0">
@@ -19,8 +16,6 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
         </padding>
 
-        <Label fx:id="notificationMessage"/>
-
         <Label text="Home page" alignment="CENTER">
             <font>
                 <Font name="Verdana" size="24.0"/>
@@ -28,11 +23,12 @@
         </Label>
 
         <GridPane prefHeight="50.0" prefWidth="400.0" vgap="10.0" hgap="10.0">
+
             <Button fx:id="news" text="Follow News" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
             <Label text="News portal" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-
             <Button fx:id="films" text="Follow Films" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
             <Label text="Films portal" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
         </GridPane>
 
         <Button fx:id="onDashboard" text="Dashboard" onAction="#onDashboard" GridPane.columnIndex="1" GridPane.rowIndex="1"/>

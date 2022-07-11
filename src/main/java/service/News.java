@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -6,11 +6,11 @@ import java.util.Date;
 
 public class News implements Resource {
 
-    private String author;
-    private String date;
-    private String title;
-    private String text;
-    private ArrayList<Tag> tags;
+    private final String author;
+    private final String date;
+    private final String title;
+    private final String text;
+    private final ArrayList<Tag> tags;
 
     private final Notification notification;
 

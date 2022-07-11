@@ -8,13 +8,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.GridPane?>
+
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.exercise.observerproject.ObserverController">
+      fx:controller="controllers.ObserverController">
+
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-
-    <Label fx:id="notificationMessage"/>
 
     <Label text="Observer Dashboard" alignment="CENTER">
         <font>
@@ -23,15 +23,18 @@
     </Label>
 
     <ScrollPane fx:id="dashboardScroll">
+
         <padding>
             <Insets top="10" right="10" bottom="10" left="10"/>
         </padding>
-        <GridPane fx:id="dashboardArea"
-                  alignment="center" vgap="10.0" hgap="10.0">
+
+        <GridPane fx:id="dashboardArea" alignment="center" vgap="10.0" hgap="10.0">
 
         </GridPane>
+
     </ScrollPane>
 
     <Button text="Update" onAction="#updateDashboardButton"/>
     <Button text="back" onAction="#back"/>
+
 </VBox>

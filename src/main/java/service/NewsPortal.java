@@ -1,4 +1,4 @@
-package entity;
+package service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,12 +7,8 @@ import java.util.Set;
 
 public class NewsPortal implements Portal {
 
-    private ArrayList<Resource> news = new ArrayList<>();
-    private Set<Follower> followers = new HashSet<>();
-
-    public Set<Follower> getFollowers() {
-        return followers;
-    }
+    private final ArrayList<Resource> news = new ArrayList<>();
+    private final Set<Follower> followers = new HashSet<>();
 
     @Override
     public void addSubscriber(Follower f) {
