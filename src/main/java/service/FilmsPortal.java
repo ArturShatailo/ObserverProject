@@ -31,8 +31,8 @@ public class FilmsPortal implements Portal {
     public void addContent(Map<String, String> r, ArrayList<Tag> tags){
         Resource resource = new Film(
                 r.get("director"),
-                r.get("date"),
                 r.get("name"),
+                r.get("date"),
                 r.get("overview"),
                 tags);
 

@@ -11,16 +11,16 @@ public class User implements Follower {
 
     private final LinkedList<Resource> dashboard = new LinkedList<>();
 
-    public LinkedList<Resource> getDashboard() {
-        return dashboard;
-    }
-
     private final Set<Portal> portals = new HashSet<>();
 
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public LinkedList<Resource> getDashboard() {
+        return dashboard;
     }
 
     public Set<Portal> getPortals() {
